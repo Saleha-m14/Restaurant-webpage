@@ -1602,3 +1602,24 @@ section {
 #footer .credits {
     font-size: 13px;
 }
+
+----------------------------------------------------------------
+
+/*menu img*/
+.menu .menu-img {
+    width: 70px;
+    border-radius: 50%;
+    float: left;
+    border: 5px solid rgba(255, 255, 255, 0.2);
+}
+
+img,
+svg {
+    vertical-align: middle;
+}
+
+,
+::after,
+::before {
+    box-sizing: border-box;
+}
