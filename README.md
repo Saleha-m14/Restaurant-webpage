@@ -1,39 +1,100 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# **Yummy Restaurant**
 
-Welcome,
 
-This is the Code Institute student template for Codeanywhere. If you are using Gitpod then you need [this template](https://github.com/Code-Institute-Org/gitpod-full-template) instead.  We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+![View the Yummy Restaurant Homepage](images/main-image.png)
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Codeanywhere and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **August 30th, 2023**
+This is my fourth project in [Code Institute](https://codeinstitute.net/de/) that is a for a Yummy fictional resturant. It is a very good place where people can go and eat the most delicious foods in Berlin, Germany. The customer can view the menu items and this webpage allows the user to sign in or sign up and book a table online if the customer wanted to do so.
 
-## Codeanywhere Reminders
+[You can view the live project here!]()
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere, in the terminal, type:
 
-`python3 -m http.server`
+# **Table of Contents**
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+- [User Experience (UX)](#user-experience-ux)
+  - [Project goals](#project-goals)
+  - [User Stories](#user-stories)
+  - [Agile Methodology](#agile-methodology)
+  - [Design](#design)
+    - [Wireframes](#wireframes)
+    - [Database Schema](#database-schema)
+- [Features](#features)
+  - [Future Features](#future-features)
+- [Technologies Used](#technologies-used)
+  - [Languages](#languages)
+  - [Frameworks Libraries Programs](#frameworks-libraries-programs)
+- [Testing](#testing)
+  - [Bugs](#bugs)
+    - [Fixed Bugs](#fixed-bugs)
+    - [Remaining Bugs](#remaining-bugs)
+- [Deployment](#deployment)
+  - [Forking the GitHub Repository](#forking-the-github-repository)
+  - [Running the project locally](#running-the-project-locally)
+  - [Deploying with Heroku](#deploying-with-heroku)
+- [Credits](#credits)
+  - [Code](#code)
+  - [Media](#media)
+  - [Acknowledgements](#acknowledgements)
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere with no-cache, you can use this alias for `python3 -m http.server`.
 
-`http_server`
+## Project Goals
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+The main goal for this project is to create a webpage for the customers of Yummy Restaurant that eligibles the user to view the menu item and book a table online.
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+## User Stories
 
-In Codeanywhere you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+- ### Administrator
+  -  As a website admin I can log in to admin panel using the super user.
+  -  As a website admin I can view the bookings and make changes to it.
 
-To log into the Heroku toolbelt CLI:
 
-1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
-2. Scroll down to the _API Key_ and click _Reveal_
-3. Copy the key
-4. In Codeanywhere, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+ -  ### First Time User
+    -  As a first time user I want to view the Yummy Restaurant webpage and see information about resturant.
+    -  As a first time user I can see the menu items to know which kinds of foods I can eat at this restaurant.
+    -  As a first time user I want to be able to find the relevant information to know how to contact with this restaurant.
+    -  As a first time user I want to be able to book a table online bcause I want to be sure that there is an empty table for me.
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+ -  ### Frequent User
+    - As a returning user I can create and log in it to see my bookings
+    - As a returning user I can see my bookings.
 
----
+- ### Returning User
 
-Happy coding!
+    -  As a returning user I want to be able to sign in and manage my bookings.
+    -  As a returning user I want to be able to make changes to my current booking or cancel it.
+
+- ### Agile Methodology
+
+The user stories are added to project as [issues in the Github](https://github.com/Saleha-m14/Restaurant-webpage/issues) and are prioritzed using lables. The [Kanban Board](<https://github.com/users/Saleha-m14/projects/3>) is used to implement Agile in this project.
+
+
+-  ### Design
+
+
+## Features
+
+  - ### Future Features
+    - As a future feature the user will be able to order food  from the menu items.
+    - As a future feature I want to add some more foods to the menu.
+  
+## Frameworks, Libraries & Tools
+
+  -  [**Heroku**](https://dashboard.heroku.com/apps) is used for deploying this project
+- [**Github**](https://github.com/) is used to store the project.
+- [**Codeanywhere**](https://codeanywhere.com/) is used as a development environment. 
+- [**Django**](https://docs.djangoproject.com/) that is a python framework.
+- [**Cloudinary**](https://cloudinary.com/)is used for media and static files.
+- [**Database-URL**](https://pypi.org/project/dj-database-url/0.5.0/)is used to represent database settings
+- [**Gunicorn**](https://pypi.org/project/gunicorn/20.1.0/) is used to run Django on heroku.
+- [**Psycopg2**](https://pypi.org/project/psycopg2/2.9.3/) to connect Postgre SQL
+- [**Bootstrap**](https://getbootstrap.com/) used for the frontend
+
+
+## Testing
+
+   - ### Bugs
+     - #### Fixed Bugs
+     - #### Remaining Bugs
+
+
+## Deployment
+
