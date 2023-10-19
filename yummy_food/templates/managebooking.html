@@ -15,11 +15,11 @@
                     <h3 class="section-title">Welcome back</h3>
                     <h4 class="section-title">{{ booking.name }}</h4>
                     <p class="card-text">
-                        <p>Date: {{ booking.date }}</p>
-                        <p>Time: {{ booking.time }}</p>
-                        <p>Number of Persons: {{ booking.person_number }}</p>
-                        <p>Email: {{ booking.email }}</p>
-                        <p>Phone Number: {{ booking.phone }}</p>
+                    <p>Date: {{ booking.date }}</p>
+                    <p>Time: {{ booking.time }}</p>
+                    <p>Number of Persons: {{ booking.person_number }}</p>
+                    <p>Email: {{ booking.email }}</p>
+                    <p>Phone Number: {{ booking.phone }}</p>
                     </p>
                     <a href="/changebooking/{{booking.id}}" class="btn btn-secondary text-center ">Change</a>
                     <a href="/deletebooking/{{booking.id}}" class="btn btn-warning" data-bs-toggle="modal"
@@ -28,6 +28,30 @@
             </div>
         </div>
     </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="deleteModal_{{ booking.id }}" tabindex="-1" aria-labelledby="deleteModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog text-dark">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="deleteModalLabel">Delete Booking</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Please confirm that you want to delete your booking!
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Back</button>
+                    <a href="{% url 'delete' booking.id %}" class="btn btn-warning">Delete</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Show message if there are no bookings -->
+    {% empty %} <p>You haven't booked a table yet.</p>
+
+    {% endfor %}
+
 </section>
-<!-- End Book A Table Section -->
 {% endblock %}
