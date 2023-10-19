@@ -46,4 +46,4 @@ def booking_page(request):
     context = {
         'form': booking_form
     }
-    return HttpResponse("You booked a table in Yummy Restaurant")
+    return render(request, 'booking.html')
