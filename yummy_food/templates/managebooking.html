@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+<!--This file extends base.html file-->
+
+{% block content %}
+<!-- File content -->
+<!-- Bookings that is made by login user -->
+<section id="book-a-table" class="book-a-table">
+    <div class="container">
+        <div class="section-title">
+            <h2>Manage your<span>Table Bookings</span></h2>
+            <p>Below You can find all the lists of the bookings that you have made</p>
+            <div class="container">
+                <div class="row">
+                    {% for booking in Booking %}
+                    <h3 class="section-title">Welcome back</h3>
+                    <h4 class="section-title">{{ booking.name }}</h4>
+                    <p class="card-text">
+                        <p>Date: {{ booking.date }}</p>
+                        <p>Time: {{ booking.time }}</p>
+                        <p>Number of Persons: {{ booking.person_number }}</p>
+                        <p>Email: {{ booking.email }}</p>
+                        <p>Phone Number: {{ booking.phone }}</p>
+                    </p>
+                    <a href="/changebooking/{{booking.id}}" class="btn btn-secondary text-center ">Change</a>
+                    <a href="/deletebooking/{{booking.id}}" class="btn btn-warning" data-bs-toggle="modal"
+                        data-bs-target="#deleteModal_{{ booking.id }}">Delete</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Book A Table Section -->
+{% endblock %}
