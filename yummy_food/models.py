@@ -1,3 +1,4 @@
+from django.core.validators import EmailValidator
 from django.db import models
 
 # Create a model for table booking

@@ -90,7 +90,7 @@ The user stories are added to project as [issues in the Github](https://github.c
 - [**Gunicorn**](https://pypi.org/project/gunicorn/20.1.0/) is used to run Django on heroku.
 - [**Psycopg2**](https://pypi.org/project/psycopg2/2.9.3/) to connect Postgre SQL
 - [**Bootstrap**](https://getbootstrap.com/) used for the frontend
-
+- [**allauth**](https://docs.allauth.org/en/latest/release-notes/recent.html)
 
 ## Testing
 

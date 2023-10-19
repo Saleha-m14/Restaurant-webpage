@@ -1,3 +1,6 @@
+from django.http import HttpResponse
+from .forms import ContactForm
+from django.shortcuts import render, redirect
 from django.shortcuts import render
 from .models import Booking
 from .forms import TableBookingForm
@@ -12,14 +15,20 @@ def home(request):
     return render(request, 'index.html')
 
 
-def signup(request):
-    """ This is the sign up page"""
-    return render(request, "signup.html")
+def contact(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            # Process the form data
+            pass
+            return redirect('success')
+    else:
+        form = ContactForm()
+    return render(request, 'contact.html', {'form': form})
 
 
-def signin(request):
-    """ This is the sign up page"""
-    return render(request, "signin.html")
+def success(request):
+    return HttpResponse('Success!')
 
 
 def booking_page(request):
