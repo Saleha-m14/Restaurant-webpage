@@ -11,6 +11,5 @@ class Booking(models.Model):
     time = models.TimeField()
     person_number = models.IntegerField(null=False, blank=False, default=2)
 
-
     def __str__(self):
         return self.name
