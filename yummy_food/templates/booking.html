@@ -102,12 +102,7 @@
         <div class="text-center"><button type="submit">Send Message</button></div>
     </form>
     -->
-    <form
-      action="forms/book-a-table.php"
-      method="post"
-      role="form"
-      class="php-email-form"
-    >
+    <form method="POST" action="{% url 'booking_page' %}" name="form">
       {% csrf_token %}
       <!-- Form goes here -->
       {{ form }}
