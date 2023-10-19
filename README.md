@@ -5,7 +5,10 @@
 
 This is my fourth project in [Code Institute](https://codeinstitute.net/de/) that is a for a Yummy fictional resturant. It is a very good place where people can go and eat the most delicious foods in Berlin, Germany. The customer can view the menu items and this webpage allows the user to sign in or sign up and book a table online if the customer wanted to do so.
 
-[You can view the live project here!]()
+[View the live project here!]()
+
+
+[View the Github repository](https://github.com/Saleha-m14/Restaurant-webpage)
 
 
 # **Table of Contents**

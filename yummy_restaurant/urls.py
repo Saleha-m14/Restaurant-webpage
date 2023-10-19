@@ -16,10 +16,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from yummy_food.views import home
+from yummy_food.views import signup
+from yummy_food.views import signin
 from yummy_food.views import booking_page
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home, name='home'),
-    path('booking_page/', booking_page, name='booking_page')
+    path('signup/', signup, name='signup'),
+    path('signin/', signin, name='signin'),
+    path('booking_page/', booking_page, name='booking_page'),
+
 ]

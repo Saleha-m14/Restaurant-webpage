@@ -12,6 +12,16 @@ def home(request):
     return render(request, 'index.html')
 
 
+def signup(request):
+    """ This is the sign up page"""
+    return render(request, "signup.html")
+
+
+def signin(request):
+    """ This is the sign up page"""
+    return render(request, "signin.html")
+
+
 def booking_page(request):
     """ This is the table booking page that 
     enables the user to fill the form and
