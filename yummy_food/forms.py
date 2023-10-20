@@ -6,6 +6,7 @@ from .models import Booking
 class TableBookingForm(forms.ModelForm):
     class Meta:
         model = Booking
+        exclude = ('user', )
         fields = '__all__'
 
 
