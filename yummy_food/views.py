@@ -38,7 +38,7 @@ def booking_page(request):
     If user is loged in it renders booking.html and if not
     the user should login or signup.
     """
-    
+
     if request.method == 'POST':
         form = TableBookingForm(data=request.POST)
 

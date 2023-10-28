@@ -31,7 +31,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['yummy-restaurant-webpage-6c0b2e074e4b.herokuapp.com',
                  '8000-saleha-m14-restaurant-we-bfq71hq3qz.us2.codeanyapp.com']
@@ -108,10 +108,10 @@ WSGI_APPLICATION = 'yummy_restaurant.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 # DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.sqlite3',
-#        'NAME': BASE_DIR / 'db.sqlite3',
-#    }
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
 # }
 
 
