@@ -73,7 +73,7 @@ def managebooking(request):
         return render(request, 'managebooking.html', context)
     else:
         redirect('../account/signup')
-    
+
 
 def changebooking(request, booking_id):
     """ This will render the change_booking.html and allows
@@ -92,4 +92,17 @@ def changebooking(request, booking_id):
     context = {
         'form': form
     }
-    return render (request, 'managebooking.html', context)
+    return render(request, 'managebooking.html', context)
+
+
+def deletebooking(request, booking_id):
+    """This is the view for deleting a booking that is
+    made by a user. The user should match the user that
+    made the booking.
+    """
+    booking = get_object_or_404(Booking, id=booking_id)
+    if request.user != booking.user:
+        return redirect('managebooking')
+    booking.delete()
+    messages.success(request, 'You deleted your booking!')
+    return redirect('managebooking')

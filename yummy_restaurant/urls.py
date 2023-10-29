@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from yummy_food.views import home
-from yummy_food.views import booking_page, managebooking, changebooking
+from yummy_food.views import booking_page, managebooking, changebooking, deletebooking
 from yummy_food.views import contact, success
 
 urlpatterns = [
@@ -26,7 +26,7 @@ urlpatterns = [
     path('booking_page/', booking_page, name='booking_page'),
     path('managebooking/',  managebooking, name='managebooking'),
     path('changebooking/',  changebooking, name='changebooking'),
-
+    path('deletebooking/',  deletebooking, name='deletebooking'),
     path('contact/', contact, name='contact'),
     path('success/', success, name='success'),
 
