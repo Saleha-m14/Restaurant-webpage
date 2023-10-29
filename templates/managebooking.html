@@ -21,9 +21,9 @@
                     <p>Email: {{ booking.email }}</p>
                     <p>Phone Number: {{ booking.phone }}</p>
                     </p>
-                    <a href="/changebooking/{{booking.id}}" class="btn btn-secondary text-center ">Change</a>
+                    <div class="text-center"><a href="/changebooking/{{booking.id}}" class="btn btn-secondary text-center ">Change</a>
                     <a href="/deletebooking/{{booking.id}}" class="btn btn-warning" data-bs-toggle="modal"
-                        data-bs-target="#deleteModal_{{ booking.id }}">Delete</a>
+                        data-bs-target="#deleteModal_{{ booking.id }}">Delete</a></div>
                 </div>
             </div>
         </div>
@@ -42,8 +42,8 @@
                     Please confirm that you want to delete your booking!
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Back</button>
-                    <a href="{% url 'delete' booking.id %}" class="btn btn-warning">Delete</a>
+                    <button type="button" class="text-center btn btn-secondary" data-bs-dismiss="modal">Back</button>
+                    <a href="{% url 'delete' booking.id %}" class="text-center btn btn-warning">Delete</a>
                 </div>
             </div>
         </div>

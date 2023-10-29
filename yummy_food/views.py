@@ -38,7 +38,7 @@ def booking_page(request):
     If user is loged in it renders booking.html and if not
     the user should login or signup.
     """
-
+    form = TableBookingForm()
     if request.method == 'POST':
         form = TableBookingForm(data=request.POST)
 
@@ -46,12 +46,12 @@ def booking_page(request):
             form.save(commit=False)
             form.user = request.user
             form.save()
-            message.success(
+            messages.success(
                 request, 'Your table in Yummy Restaurant is booked.')
             return redirect('managebooking')
         else:
-            message.error(
-                request, 'You have already booked a table or entered invalid information'
+            messages.error(
+                request, 'You have already booked a table or entered invalid data'
             )
     context = {
         'form': form
@@ -73,3 +73,23 @@ def managebooking(request):
         return render(request, 'managebooking.html', context)
     else:
         redirect('../account/signup')
+    
+
+def changebooking(request, booking_id):
+    """ This will render the change_booking.html and allows
+    the user to bring changes to his/her bookings.
+    """
+    booking = get_object_or_404(Booking, id=booking_id)
+    if request.user != booking.user:
+        return redirect('managebooking')
+    if request.method == 'POST':
+        form = TableBookingForm(request.POST, instance=booking)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'You updated your bookings')
+            return redirect('managebooking')
+    form = TableBookingForm(instance=booking)
+    context = {
+        'form': form
+    }
+    return render (request, 'managebooking.html', context)
