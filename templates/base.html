@@ -63,14 +63,17 @@
             <nav id="navbar" class="navbar order-last order-lg-0">
                 <ul>
                     <li><a class="nav-link scrollto active" href="{% url 'home' %}">Home</a></li>
-                    <li><a class="nav-link scrollto" href="{% url 'home' %}#about"></a>About</a></li>
+                    <li><a class="nav-link scrollto" href="{% url 'home' %}#about">About</a></li>
                     <li><a class="nav-link scrollto" href="{% url 'home' %}#menu">Menu</a></li>
                     <li><a class="nav-link scrollto" href="{% url 'home' %}#spcials">Specials</a></li>
-                    <li><a class="nav-link scrollto" href="{% url 'account_logout' %}"></a>Logout</a></li>
-                    <li><a class="nav-link scrollto" href="{% url 'account_login' %}">Login</a></li>
-                    <li><a class="nav-link scrollto" href="{% url 'account_signup' %}">Register</a></li>
                     <li><a class="nav-link scrollto" href="{% url 'home' %}#gallery">Gallery</a></li>
                     <li><a class="nav-link scrollto" href="{% url 'contact' %}">Contact</a></li>
+                    {% if user.is_authenticated %}
+                    <li><a class="nav-link scrollto" href="{% url 'account_logout' %}">Logout</a></li>
+                    {% else %}
+                    <li><a class="nav-link scrollto" href="{% url 'account_signup' %}">Register</a></li>
+                    <li><a class="nav-link scrollto" href="{% url 'account_login' %}">Login</a></li>
+                    {% endif %}
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->
