@@ -43,9 +43,9 @@ def booking_page(request):
         form = TableBookingForm(data=request.POST)
 
         if form.is_valid():
-            form.save(commit=False)
-            form.user = request.user
-            form.save()
+            new_booking = form.save(commit=False)
+            new_booking.user = request.user
+            new_booking.save()
             messages.success(
                 request, 'Your table in Yummy Restaurant is booked.')
             return redirect('managebooking')

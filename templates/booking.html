@@ -4,7 +4,8 @@
 <!--load static-->
 {% block content %}
 <!-- File content -->
-<!-- ======= Book A Table Section ======= 
+{% load crispy_forms_tags %}
+<!--======= Book A Table Section ======= -->
 <section id="book-a-table" class="book-a-table">
   <div class="container">
     <div class="section-title">
@@ -19,47 +20,12 @@
       class="php-email-form"
     >
       <div class="row">
-        <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0 form-control">
-          {% csrf_token %}
-           Form goes here
-          {{ form.as_p }}
-          <input
-            type="text"
-            name="name"
-            class="form-control"
-            id="name"
-            placeholder="Name"
-          />
-          <input
-            type="email"
-            name="email"
-            class="form-control"
-            id="email"
-            placeholder="Email"
-          />
-          <input
-            type="text"
-            name="phone"
-            class="form-control"
-            id="phone"
-            placeholder="Phone Number"
-          />
-          <input
-            type="text"
-            name="time"
-            class="form-control"
-            id="time"
-            placeholder="Time"
-          />
-          <input
-            type="text"
-            name="date"
-            class="form-control"
-            id="date"
-            placeholder="Date"
-          />
-
-          <div class="text-center"><button type="submit">Submit</button></div>
+        <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
+          <!--Form goes here-->
+          {{ form | crispy }} {% csrf_token %}
+          <div class="text-center">
+            <button type="submit" class="btn btn-signup btn-lg">Submit</button>
+          </div>
         </div>
       </div>
     </form>
@@ -72,8 +38,8 @@
     {% endif %}
   </div>
 </section>
-End Book A Table Section -->
-<!-- ======= Book A Table Section ======= -->
+<!--End Book A Table Section-->
+<!-- ======= Book A Table Section ======= 
 <section id="book-a-table" class="book-a-table">
   <div class="container">
     <div class="section-title">
@@ -92,7 +58,7 @@ End Book A Table Section -->
       <div class="row">
         <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
         {% csrf_token %}
-        <!--Form goes here-->
+        
         {{ form.as_p }}
         
         </div>
@@ -104,6 +70,6 @@ End Book A Table Section -->
     </form>
     
   </div>
-</section>
+</section>-->
 <!-- End Book A Table Section -->
 {% endblock %}
