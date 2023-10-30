@@ -2,32 +2,73 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
     <title>Yummy Restaurant</title>
-    <meta content="" name="description">
-    <meta content="" name="keywords">
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+      type="text/css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+      crossorigin="anonymous"
+    ></script>
 
     <!-- Favicons -->
-    <link href="{% static 'img/favicon.png' %}" rel="icon">
-    <link href="{% static 'img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+    <link href="{% static 'img/favicon.png' %}" rel="icon" />
+    <link
+      href="{% static 'img/apple-touch-icon.png' %}"
+      rel="apple-touch-icon"
+    />
 
     <!-- Google Fonts -->
     <link
-        href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,600,600i,700,700i|Satisfy|Comic+Neue:300,300i,400,400i,700,700i"
-    <!-- Vendor CSS Files -->
-    <link href="{% static 'vendor/animate.css/animate.min.css' %}" rel="stylesheet">
-    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
-    <link href="{% static 'vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
-    <link href="{% static 'vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
-    <link href="{% static 'vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
-    <link href="{% static 'vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
-    
+      href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,600,600i,700,700i|Satisfy|Comic+Neue:300,300i,400,400i,700,700i"
+      <!--
+      Vendor
+      CSS
+      Files
+      --
+    />
+    <link
+      href="{% static 'vendor/animate.css/animate.min.css' %}"
+      rel="stylesheet"
+    />
+    <link
+      href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}"
+      rel="stylesheet"
+    />
+    <link
+      href="{% static 'vendor/bootstrap-icons/bootstrap-icons.css' %}"
+      rel="stylesheet"
+    />
+    <link
+      href="{% static 'vendor/boxicons/css/boxicons.min.css' %}"
+      rel="stylesheet"
+    />
+    <link
+      href="{% static 'vendor/glightbox/css/glightbox.min.css' %}"
+      rel="stylesheet"
+    />
+    <link
+      href="{% static 'vendor/swiper/swiper-bundle.min.css' %}"
+      rel="stylesheet"
+    />
+
     <!-- Template Main CSS File -->
-    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" />
 
     <!-- =======================================================
   * Template Name: Delicious
@@ -36,11 +77,10 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
-</head>
+  </head>
 
-<body>
-
-    <!-- ======= Top Bar ======= -->
+  <body>
+    <!-- ======= Top Bar ======= 
     <section id="topbar" class="d-flex align-items-center fixed-top topbar-transparent">
         <div
             class="container-fluid container-xl d-flex align-items-center justify-content-center justify-content-lg-start">
@@ -48,82 +88,159 @@
             <i class="bi bi-clock ms-4 d-none d-lg-flex align-items-center"><span>Mon-Sat: 10:00 AM - 23:00
                     PM</span></i>
         </div>
-    </section>
+    </section>-->
 
     <!-- ======= Header ======= -->
-    <header id="header" class="fixed-top d-flex align-items-center header-transparent">
-        <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
-
-            <div class="logo me-auto">
-                <h1><a href="{% url 'home' %}">Yummy Restaurant</a></h1>
-                <!-- Uncomment below if you prefer to use an image logo -->
-                <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-            </div>
-
-            <nav id="navbar" class="navbar order-last order-lg-0">
-                <ul>
-                    <li><a class="nav-link scrollto active" href="{% url 'home' %}">Home</a></li>
-                    <li><a class="nav-link scrollto" href="{% url 'home' %}#about">About</a></li>
-                    <li><a class="nav-link scrollto" href="{% url 'home' %}#menu">Menu</a></li>
-                    <li><a class="nav-link scrollto" href="{% url 'home' %}#spcials">Specials</a></li>
-                    <li><a class="nav-link scrollto" href="{% url 'home' %}#gallery">Gallery</a></li>
-                    <li><a class="nav-link scrollto" href="{% url 'contact' %}">Contact</a></li>
-                    {% if user.is_authenticated %}
-                    <li><a class="nav-link scrollto" href="{% url 'account_logout' %}">Logout</a></li>
-                    {% else %}
-                    <li><a class="nav-link scrollto" href="{% url 'account_signup' %}">Register</a></li>
-                    <li><a class="nav-link scrollto" href="{% url 'account_login' %}">Login</a></li>
-                    {% endif %}
-                </ul>
-                <i class="bi bi-list mobile-nav-toggle"></i>
-            </nav><!-- .navbar -->
-
-            <a href="{% url 'booking_page' %}" class="book-a-table-btn scrollto">Book a table</a>
-
+    <header id="header" class="fixed-top d-flex align-items-center">
+      <div
+        class="container-fluid container-xl d-flex align-items-center justify-content-between"
+      >
+        <div class="logo me-auto">
+          <h1><a href="{% url 'home' %}">Yummy Restaurant</a></h1>
+          <!-- Uncomment below if you prefer to use an image logo -->
+          <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
         </div>
-    </header><!-- End Header -->
 
+        <nav id="navbar" class="navbar order-last order-lg-0">
+          <ul>
+            <li>
+              <a class="nav-link scrollto active" href="{% url 'home' %}"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a class="nav-link scrollto" href="{% url 'home' %}#about"
+                >About</a
+              >
+            </li>
+            <li>
+              <a class="nav-link scrollto" href="{% url 'home' %}#menu">Menu</a>
+            </li>
+            <li>
+              <a class="nav-link scrollto" href="{% url 'home' %}#spcials"
+                >Specials</a
+              >
+            </li>
+            <li>
+              <a class="nav-link scrollto" href="{% url 'home' %}#gallery"
+                >Gallery</a
+              >
+            </li>
+            <li>
+              <a class="nav-link scrollto" href="{% url 'contact' %}"
+                >Contact</a
+              >
+            </li>
+            {% if user.is_authenticated %}
+            <li>
+              <a class="nav-link scrollto" href="{% url 'account_logout' %}"
+                >Logout</a
+              >
+            </li>
+            {% else %}
+            <li>
+              <a class="nav-link scrollto" href="{% url 'account_signup' %}"
+                >Register</a
+              >
+            </li>
+            <li>
+              <a class="nav-link scrollto" href="{% url 'account_login' %}"
+                >Login</a
+              >
+            </li>
+            {% endif %}
+          </ul>
+          <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav>
+        <!-- .navbar -->
 
-    <body>
-        <main id="main">
-            <!-- Main content of the web page-->
-            {% block content %}
-            <!--Content Goes here -->
-            {% endblock %}
-        </main>
-        <!-- End #main -->
-        
-        <!-- ======= Footer ======= -->
-        <footer id="footer">
-            <div class="container">
-                <h3>Yummy Restaurnt</h3>
-                <p>Yummy serves you with the most delicious foods.
-                </p>
-                <div class="social-links">
-                    <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-                    <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-                    <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-                    <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-                </div>
-                <div class="copyright">
-                    &copy; Copyright <strong><span>Yummy</span></strong>. All Rights Reserved
-                </div>
+        <a href="{% url 'booking_page' %}" class="book-a-table-btn scrollto"
+          >Book a table</a
+        >
+      </div>
+    </header>
+    <!-- End Header -->
+    <!--messages
+    {% if messages %}
+    <ul class="messages">
+      {% for message in messages %}
+      <h3>{{ message }}</h3>
+      {% endfor %}
+    </ul>
+    {% endif %}-->
+    <section
+      id="topbar"
+      class="d-flex align-items-center fixed-top topbar-transparent"
+    >
+      <div
+        class="container-fluid container-xl d-flex align-items-center justify-content-center justify-content-lg-start"
+      >
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8 offset-md-2">
+              {% for message in messages %}
+              <div
+                class="alert {{ message.tags }} alert-dismissible fade show"
+                id="msg"
+                role="alert"
+              >
+                {{ message | safe }}
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="alert"
+                  aria-label="Close"
+                ></button>
+              </div>
+              {% endfor %}
             </div>
-        </footer><!-- End Footer -->
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
-                class="bi bi-arrow-up-short"></i></a>
+    <main id="main">
+      <!-- Main content of the web page-->
+      {% block content %}
+      <!--Content Goes here -->
+      {% endblock %}
+    </main>
 
-        <!-- Vendor JS Files -->
-        <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
-        <script src="{% static 'vendor/glightbox/js/glightbox.min.js' %}"></script>
-        <script src="{% static 'vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
-        <script src="{% static 'vendor/swiper/swiper-bundle.min.js' %}"></script>
-        <script src="{% static 'vendor/php-email-form/validate.js' %}"></script>
+    <!-- End #main -->
 
-        <!-- Template Main JS File -->
-        <script src="{% static 'js/main.js' %}"></script>
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+      <div class="container">
+        <h3>Yummy Restaurnt</h3>
+        <p>Yummy serves you with the most delicious foods.</p>
+        <div class="social-links">
+          <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+          <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+          <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+          <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+        </div>
+        <div class="copyright">
+          &copy; Copyright <strong><span>Yummy</span></strong
+          >. All Rights Reserved
+        </div>
+      </div>
+    </footer>
+    <!-- End Footer -->
 
-    </body>
+    <a
+      href="#"
+      class="back-to-top d-flex align-items-center justify-content-center"
+      ><i class="bi bi-arrow-up-short"></i
+    ></a>
 
+    <!-- Vendor JS Files -->
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'vendor/glightbox/js/glightbox.min.js' %}"></script>
+    <script src="{% static 'vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'vendor/swiper/swiper-bundle.min.js' %}"></script>
+    <script src="{% static 'vendor/php-email-form/validate.js' %}"></script>
+
+    <!-- Template Main JS File -->
+    <script src="{% static 'js/main.js' %}"></script>
+  </body>
 </html>
