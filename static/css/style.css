@@ -1602,3 +1602,23 @@ section {
 #footer .credits {
     font-size: 13px;
 }
+
+#mybuttons {
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 50px;
+    transition: 0.5s;
+    line-height: 1;
+    margin: 0 10px;
+    animation-delay: 0.8s;
+    color: #fff;
+    border: 2px solid #ffb03b;
+}
+
+.mybookings {
+    margin-left: 50px;
+}

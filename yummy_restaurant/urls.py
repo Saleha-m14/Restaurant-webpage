@@ -25,7 +25,7 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
     path('booking_page/', booking_page, name='booking_page'),
     path('managebooking/',  managebooking, name='managebooking'),
-    path('changebooking/',  changebooking, name='changebooking'),
+    path('changebooking/<booking_id>',  changebooking, name='changebooking'),
     path('deletebooking/',  deletebooking, name='deletebooking'),
     path('contact/', contact, name='contact'),
     path('success/', success, name='success'),

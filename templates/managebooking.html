@@ -1,57 +1,82 @@
 {% extends "base.html" %}
 <!--This file extends base.html file-->
-
+{% load static %}
+<!--load static-->
 {% block content %}
 <!-- File content -->
-<!-- Bookings that is made by login user -->
+
+<!--======= Book A Table Section ======= -->
 <section id="book-a-table" class="book-a-table">
-    <div class="container">
-        <div class="section-title">
-            <h2>Manage your<span>Table Bookings</span></h2>
-            <p>Below You can find all the lists of the bookings that you have made</p>
-            <div class="container">
-                <div class="row">
-                    {% for booking in Booking %}
-                    <h3 class="section-title">Welcome back</h3>
-                    <h4 class="section-title">{{ booking.name }}</h4>
-                    <p class="card-text">
-                    <p>Date: {{ booking.date }}</p>
-                    <p>Time: {{ booking.time }}</p>
-                    <p>Number of Persons: {{ booking.person_number }}</p>
-                    <p>Email: {{ booking.email }}</p>
-                    <p>Phone Number: {{ booking.phone }}</p>
-                    </p>
-                    <div class="text-center"><a href="/changebooking/{{booking.id}}" class="btn btn-secondary text-center ">Change</a>
-                    <a href="/deletebooking/{{booking.id}}" class="btn btn-warning" data-bs-toggle="modal"
-                        data-bs-target="#deleteModal_{{ booking.id }}">Delete</a></div>
-                </div>
+  <div class="container">
+    <div class="section-title">
+      
+      <h2>Your<span>Bookings</span></h2>
+    </div>
+    <div class="php-email-form">
+      <div class="row">
+        {% for booking in bookings %}
+        <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0 mybookings">
+            <div class="section-title">
+                <p>{{ booking.name }}</p>
             </div>
-        </div>
-    </div>
-    </div>
-    <!-- Modal -->
-    <div class="modal fade" id="deleteModal_{{ booking.id }}" tabindex="-1" aria-labelledby="deleteModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog text-dark">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="deleteModalLabel">Delete Booking</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    Please confirm that you want to delete your booking!
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="text-center btn btn-secondary" data-bs-dismiss="modal">Back</button>
-                    <a href="{% url 'delete' booking.id %}" class="text-center btn btn-warning">Delete</a>
-                </div>
+            <p>
+                <p>On: {{ booking.date }}</p>
+                <p>At: {{ booking.time }}</p>
+                <p>Guests: {{ booking.person_number }}</p>
+                <p>Email:{{ booking.email }}</p>
+                <p>Phone: {{ booking.phone }}</p>
+            </p>
+            <div class="text-center" id="mybuttons">
+                <a href="/changeebooking/{{ booking.id }}" class="carousel-content btn-menu animate_animated animate_fadeInUp srollt">
+                    Edit
+                </a>
             </div>
+            <div class="text-center" id="mybuttons">
+                <a href="/deletebooking/{{ booking.id }}" class="carousel-content btn-menu animate_animated animate_fadeInUp srollt">
+                    Delete
+                </a>
+            </div>
+            
         </div>
+        {% empty %} <p>You have no reservations currently</p>
+        
+        {% endfor %}
+      </div>
     </div>
-    <!-- Show message if there are no bookings -->
-    {% empty %} <p>You haven't booked a table yet.</p>
-
-    {% endfor %}
-
+  </div>
 </section>
+<!--End Book A Table Section-->
+<!-- ======= Book A Table Section ======= 
+<section id="book-a-table" class="book-a-table">
+  <div class="container">
+    <div class="section-title">
+      <h2>Book a <span>Table</span></h2>
+      <p>
+        You can fill in the form and reserve a table.
+      </p>
+    </div>
+
+    <form
+      action="{% url 'booking_page' %}"
+      method="post"
+      role="form"
+      class="php-email-form"
+    >
+      <div class="row">
+        <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
+        {% csrf_token %}
+        
+        {{ form.as_p }}
+        
+        </div>
+        
+            
+        
+        
+      <div class="text-center"><button type="submit">Submit Form</button></div>
+    </form>
+    
+  </div>
+</section>-->
+<!-- End Book A Table Section -->
 {% endblock %}
