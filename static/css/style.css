@@ -559,7 +559,7 @@ section {
 
 .section-title {
     text-align: center;
-    padding-bottom: 30px;
+    padding: 40px;
 }
 
 .section-title h2 {
@@ -574,7 +574,7 @@ section {
 }
 
 .section-title p {
-    margin: 15px auto 0 auto;
+    margin: 20px auto 0 auto;
     font-weight: 300;
 }
 
