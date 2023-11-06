@@ -17,7 +17,6 @@ from django.contrib import admin
 from django.urls import path, include
 from yummy_food.views import home
 from yummy_food.views import booking_page, managebooking, changebooking, deletebooking
-from yummy_food.views import contact, success
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,7 +26,4 @@ urlpatterns = [
     path('managebooking/',  managebooking, name='managebooking'),
     path('changebooking/<booking_id>',  changebooking, name='changebooking'),
     path('deletebooking/<booking_id>',  deletebooking, name='deletebooking'),
-    path('contact/', contact, name='contact'),
-    path('success/', success, name='success'),
-
 ]

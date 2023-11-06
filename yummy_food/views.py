@@ -15,22 +15,6 @@ def home(request):
     return render(request, 'index.html')
 
 
-def contact(request):
-    if request.method == 'POST':
-        form = ContactForm(request.POST)
-        if form.is_valid():
-            # Process the form data
-            pass
-            return redirect('success')
-    else:
-        form = ContactForm()
-    return render(request, 'contact.html', {'form': form})
-
-
-def success(request):
-    return HttpResponse('Success!')
-
-
 def booking_page(request):
     """ This is the table booking page that 
     enables the user to fill the form and
@@ -57,6 +41,7 @@ def booking_page(request):
         'form': form
     }
     return render(request, 'booking.html', context)
+    
 
 
 def managebooking(request):
