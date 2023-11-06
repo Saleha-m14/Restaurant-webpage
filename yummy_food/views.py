@@ -92,7 +92,7 @@ def changebooking(request, booking_id):
     context = {
         'form': form
     }
-    return render(request, 'managebooking.html', context)
+    return render(request, 'change_booking.html', context)
 
 
 def deletebooking(request, booking_id):

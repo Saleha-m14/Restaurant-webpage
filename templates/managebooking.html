@@ -4,18 +4,31 @@
 <!--load static-->
 {% block content %}
 <!-- File content -->
-
-<!--======= Book A Table Section ======= -->
-<section id="book-a-table" class="book-a-table">
-  <div class="container">
-    <div class="section-title">
-      
-      <h2>Your<span>Bookings</span></h2>
+              </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-center justify-content-lg-start">
+        <div class="container" id="bg">
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    {% for message in messages %}
+                    <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
+                        {{ message | safe }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>div>
+      <h2>Your <span>Bookings</span></h2>
     </div>
     <div class="php-email-form">
       <div class="row">
         {% for booking in bookings %}
-        <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0 mybookings">
+        <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0 mybookings" id="booking-form">
             <div class="section-title">
                 <p>{{ booking.name }}</p>
             </div>
@@ -27,18 +40,19 @@
                 <p>Phone: {{ booking.phone }}</p>
             </p>
             <div class="text-center" id="mybuttons">
-                <a href="/changeebooking/{{ booking.id }}" class="carousel-content btn-menu animate_animated animate_fadeInUp srollt">
+                <a href="/changebooking/{{ booking.id }}" class="carousel-content btn-menu animate_animated animate_fadeInUp srollt">
                     Edit
                 </a>
             </div>
             <div class="text-center" id="mybuttons">
-                <a href="/deletebooking/{{ booking.id }}" class="carousel-content btn-menu animate_animated animate_fadeInUp srollt">
+                <a href="/deletebooking/{{ booking.id }}" class="carousel-content btn-menu animate_animated animate_fadeInUp srollt" >
                     Delete
                 </a>
             </div>
             
+            
         </div>
-        {% empty %} <p>You have no reservations currently</p>
+        {% empty %} <p id="pbooking">You have no reservations currently</p>
         
         {% endfor %}
       </div>
@@ -46,37 +60,26 @@
   </div>
 </section>
 <!--End Book A Table Section-->
-<!-- ======= Book A Table Section ======= 
-<section id="book-a-table" class="book-a-table">
-  <div class="container">
-    <div class="section-title">
-      <h2>Book a <span>Table</span></h2>
-      <p>
-        You can fill in the form and reserve a table.
-      </p>
-    </div>
-
-    <form
-      action="{% url 'booking_page' %}"
-      method="post"
-      role="form"
-      class="php-email-form"
-    >
-      <div class="row">
-        <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
-        {% csrf_token %}
-        
-        {{ form.as_p }}
-        
+<!-- Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Delete table booking</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure that you want to delete booking?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Back</button>
+                <button type="button" class="btn btn-primary">Delete</button>
+            </div>
         </div>
-        
-            
-        
-        
-      <div class="text-center"><button type="submit">Submit Form</button></div>
-    </form>
-    
-  </div>
-</section>-->
-<!-- End Book A Table Section -->
+    </div>
+</div>
+
 {% endblock %}

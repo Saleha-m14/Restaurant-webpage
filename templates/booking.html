@@ -6,12 +6,13 @@
 <!-- File content -->
 {% load crispy_forms_tags %}
 <!--======= Book A Table Section ======= -->
+
 <section id="book-a-table" class="book-a-table">
   <div class="container">
     <div class="section-title">
       {% if user.is_authenticated %}
       <h2>Book a <span>Table</span></h2>
-      <p>Book a table in Yummy Restaurant and enjoy your time.</p>
+      <p id="pbooking">Book a table in Yummy Restaurant and enjoy your time.</p>
     </div>
     <form
       method="POST"
@@ -20,9 +21,16 @@
       class="php-email-form"
     >
       <div class="row">
-        <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0 mybookings">
-          <!--Form goes here-->
-          {{ form | crispy }} {% csrf_token %}
+        <div
+          class="col-lg-4 col-md-6 form-group mt-3 mt-md-0 mybookings"
+          id="booking-form"
+        >
+          <div class="form-group">
+            <div>
+              <!--Form goes here-->
+              {{ form | crispy }} {% csrf_token %}
+            </div>
+          </div>
           <div class="text-center">
             <button type="submit" class="btn btn-signup btn-lg">Submit</button>
           </div>
@@ -30,7 +38,7 @@
       </div>
     </form>
     {% else %}
-    <p>
+    <p id="pbooking">
       To book a table, please <a href="{% url 'account_login' %}">Login</a>. If
       you don't have an account, then
       <a href="{% url 'account_signup' %}">Sign up.</a>
@@ -39,37 +47,5 @@
   </div>
 </section>
 <!--End Book A Table Section-->
-<!-- ======= Book A Table Section ======= 
-<section id="book-a-table" class="book-a-table">
-  <div class="container">
-    <div class="section-title">
-      <h2>Book a <span>Table</span></h2>
-      <p>
-        You can fill in the form and reserve a table.
-      </p>
-    </div>
 
-    <form
-      action="{% url 'booking_page' %}"
-      method="post"
-      role="form"
-      class="php-email-form"
-    >
-      <div class="row">
-        <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
-        {% csrf_token %}
-        
-        {{ form.as_p }}
-        
-        </div>
-        
-            
-        
-        
-      <div class="text-center"><button type="submit">Submit Form</button></div>
-    </form>
-    
-  </div>
-</section>-->
-<!-- End Book A Table Section -->
 {% endblock %}

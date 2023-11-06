@@ -895,7 +895,9 @@ section {
 }
 
 .menu .menu-content::after {
-    content: "......................................................................""....................................................................""....................................................................";
+    content: "......................................................................"
+        "...................................................................."
+        "....................................................................";
     position: absolute;
     left: 20px;
     right: 0;
@@ -1163,7 +1165,7 @@ section {
     padding: 10px 12px;
 }
 
-.book-a-table .php-email-form button[type=submit] {
+.book-a-table .php-email-form button[type="submit"] {
     background: #ffb03b;
     border: 0;
     padding: 10px 24px;
@@ -1172,7 +1174,7 @@ section {
     border-radius: 50px;
 }
 
-.book-a-table .php-email-form button[type=submit]:hover {
+.book-a-table .php-email-form button[type="submit"]:hover {
     background: #ffa012;
 }
 
@@ -1384,6 +1386,10 @@ section {
     top: 10px;
 }
 
+#largefont {
+    font-size: 20px;
+}
+
 .testimonials .testimonial-item p {
     font-style: italic;
     margin: 0 auto 15px auto;
@@ -1522,7 +1528,7 @@ section {
     padding: 10px 12px;
 }
 
-.contact .php-email-form button[type=submit] {
+.contact .php-email-form button[type="submit"] {
     background: #ffb03b;
     border: 0;
     padding: 10px 24px;
@@ -1531,7 +1537,7 @@ section {
     border-radius: 50px;
 }
 
-.contact .php-email-form button[type=submit]:hover {
+.contact .php-email-form button[type="submit"]:hover {
     background: #ffa012;
 }
 
@@ -1621,4 +1627,23 @@ section {
 
 .mybookings {
     margin-left: 50px;
+}
+
+#pbooking {
+    font-size: 20px;
+    font-weight: 200;
+    padding-top: 20px;
+}
+
+#booking-form {
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #ecf2f8;
+    text-align: center;
+}
+
+
+
+#md-font {
+    font-size: 14px;
 }

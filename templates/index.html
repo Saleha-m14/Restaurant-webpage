@@ -24,6 +24,31 @@
         >
           <div class="carousel-container">
             <div class="carousel-content">
+              <div
+                class="container-fluid container-xl d-flex align-items-center justify-content-center justify-content-lg-start"
+              >
+                <div class="container">
+                  <div class="row">
+                    <div class="col-md-8 offset-md-2">
+                      {% for message in messages %}
+                      <div
+                        class="alert {{ message.tags }} alert-dismissible fade show"
+                        id="msg"
+                        role="alert"
+                      >
+                        {{ message | safe }}
+                        <button
+                          type="button"
+                          class="btn-close"
+                          data-bs-dismiss="alert"
+                          aria-label="Close"
+                        ></button>
+                      </div>
+                      {% endfor %}
+                    </div>
+                  </div>
+                </div>
+              </div>
               <h2 class="animate__animated animate__fadeInDown">
                 <span>Yummy</span> Restaurant
               </h2>
@@ -79,10 +104,10 @@
           alt=""
           class="menu-img"
         />
-        <div class="menu-content">
+        <div class="menu-content" id="largefont">
           <a href="#">Lobster Bisque</a><span>$5.95</span>
         </div>
-        <div class="menu-ingredients">
+        <div class="menu-ingredients" id="md-font">
           a smooth, creamy soup, made from crustaceans like lobster, crab or
           crayfish
         </div>
@@ -94,7 +119,7 @@
           alt=""
           class="menu-img"
         />
-        <div class="menu-content">
+        <div class="menu-content" id="largefont">
           <a href="#">Bread barrel</a><span>$6.95</span>
         </div>
         <div class="menu-ingredients">
@@ -104,7 +129,7 @@
 
       <div class="col-lg-6 menu-item filter-starters">
         <img src="{% static 'img/menu/cake.jpg' %}" alt="" class="menu-img" />
-        <div class="menu-content">
+        <div class="menu-content" id="largefont">
           <a href="#">Crab Cake</a><span>$7.95</span>
         </div>
         <div class="menu-ingredients">
@@ -115,7 +140,7 @@
 
       <div class="col-lg-6 menu-item filter-salads">
         <img src="{% static 'img/menu/caesar.jpg' %}" alt="" class="menu-img" />
-        <div class="menu-content">
+        <div class="menu-content" id="largefont">
           <a href="#">Caesar Selections</a><span>$8.95</span>
         </div>
         <div class="menu-ingredients">
@@ -129,7 +154,7 @@
           alt=""
           class="menu-img"
         />
-        <div class="menu-content">
+        <div class="menu-content" id="largefont">
           <a href="#">Tuscan Grilled</a><span>$9.95</span>
         </div>
         <div class="menu-ingredients">
@@ -144,7 +169,7 @@
           alt=""
           class="menu-img"
         />
-        <div class="menu-content">
+        <div class="menu-content" id="largefont">
           <a href="#">Mozzarella Stick</a><span>$4.95</span>
         </div>
         <div class="menu-ingredients">
@@ -158,7 +183,7 @@
           alt=""
           class="menu-img"
         />
-        <div class="menu-content">
+        <div class="menu-content" id="largefont">
           <a href="#">Greek Salad</a><span>$9.95</span>
         </div>
         <div class="menu-ingredients">
@@ -172,7 +197,7 @@
           alt=""
           class="menu-img"
         />
-        <div class="menu-content">
+        <div class="menu-content" id="largefont">
           <a href="#">Spinach Salad</a><span>$9.95</span>
         </div>
         <div class="menu-ingredients">
@@ -187,7 +212,7 @@
           alt=""
           class="menu-img"
         />
-        <div class="menu-content">
+        <div class="menu-content" id="largefont">
           <a href="#">Lobster Roll</a><span>$12.95</span>
         </div>
         <div class="menu-ingredients">
@@ -198,14 +223,15 @@
   </div>
 </section>
 <!-- End Menu Section -->
+
 <!-- ======= Gallery Section ======= -->
 <section id="gallery" class="gallery">
   <div class="container-fluid">
     <div class="section-title">
       <h2>Some photos from <span>Our Restaurant</span></h2>
       <p>
-        Ut possimus qui ut temporibus culpa velit eveniet modi omnis est
-        adipisci expedita at voluptas atque vitae autem.
+        These are some photos from our restaurant. They are taken form different
+        parts of Yummy Restaurant.
       </p>
     </div>
 
