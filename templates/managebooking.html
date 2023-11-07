@@ -4,59 +4,61 @@
 <!--load static-->
 {% block content %}
 <!-- File content -->
+
 <section id="book-a-table" class="book-a-table">
     <div class="container">
         <div class="section-title">
             <div class="container-fluid container-xl d-flex align-items-center justify-content-center justify-content-lg-start">
-        <div class="container" id="bg">
-            <div class="row">
-                <div class="col-md-8 offset-md-2">
-                    {% for message in messages %}
-                    <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
-                        {{ message | safe }}
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                <div class="container" id="bg">
+                    <div class="row">
+                        <div class="col-md-8 offset-md-2">
+                            {% for message in messages %}
+                            <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
+                                {{ message | safe }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                            {% endfor %}
+                        </div>
                     </div>
-                    {% endfor %}
                 </div>
             </div>
+            <h2>Your <span>Bookings</span></h2>
+        </div>
+        <div class="php-email-form">
+            <div class="row">
+                {% for booking in bookings %}
+                <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0 mybookings" id="booking-form">
+                    <div class="section-title">
+                        <p>{{ booking.name }}</p>
+                    </div>
+                    <p>
+                    <p>On: {{ booking.date }}</p>
+                    <p>At: {{ booking.time }}</p>
+                    <p>Guests: {{ booking.person_number }}</p>
+                    <p>Email:{{ booking.email }}</p>
+                    <p>Phone: {{ booking.phone }}</p>
+                    </p>
+                    <div class="text-center" id="mybuttons">
+                        <a href="/changebooking/{{ booking.id }}"
+                            class="carousel-content btn-menu animate_animated animate_fadeInUp srollt">
+                            Edit
+                        </a>
+                    </div>
+                    <div class="text-center" id="mybuttons">
+                        <a href="/deletebooking/{{ booking.id }}"
+                            class="carousel-content btn-menu animate_animated animate_fadeInUp srollt">
+                            Delete
+                        </a>
+                    </div>
+
+
+                </div>
+                {% empty %} <p id="pbooking">You have no reservations currently</p>
+
+                {% endfor %}
+            </div>
         </div>
     </div>
-</section>
-      <h2>Your <span>Bookings</span></h2>
-    </div>
-    <div class="php-email-form">
-      <div class="row">
-        {% for booking in bookings %}
-        <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0 mybookings" id="booking-form">
-            <div class="section-title">
-                <p>{{ booking.name }}</p>
-            </div>
-            <p>
-                <p>On: {{ booking.date }}</p>
-                <p>At: {{ booking.time }}</p>
-                <p>Guests: {{ booking.person_number }}</p>
-                <p>Email:{{ booking.email }}</p>
-                <p>Phone: {{ booking.phone }}</p>
-            </p>
-            <div class="text-center" id="mybuttons">
-                <a href="/changebooking/{{ booking.id }}" class="carousel-content btn-menu animate_animated animate_fadeInUp srollt">
-                    Edit
-                </a>
-            </div>
-            <div class="text-center" id="mybuttons">
-                <a href="/deletebooking/{{ booking.id }}" class="carousel-content btn-menu animate_animated animate_fadeInUp srollt" >
-                    Delete
-                </a>
-            </div>
-            
-            
-        </div>
-        {% empty %} <p id="pbooking">You have no reservations currently</p>
-        
-        {% endfor %}
-      </div>
-    </div>
-  </div>
 </section>
 <!--End Book A Table Section-->
 

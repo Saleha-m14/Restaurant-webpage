@@ -15,8 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from yummy_food.views import home
-from yummy_food.views import booking_page, managebooking, changebooking, deletebooking
+from yummy_food.views import home, booking_page
+from yummy_food.views import managebooking, changebooking, deletebooking
 
 urlpatterns = [
     path('admin/', admin.site.urls),

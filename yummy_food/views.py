@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from .forms import ContactForm
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404, reverse
 from .models import Booking
 from .forms import TableBookingForm
 from django.contrib import messages
@@ -16,32 +16,41 @@ def home(request):
 
 
 def booking_page(request):
-    """ This is the table booking page that 
+    """ This is the table booking page that
     enables the user to fill the form and
     book a table. The should login to make a reservation.
     If user is loged in it renders booking.html and if not
     the user should login or signup.
     """
-    form = TableBookingForm()
-    if request.method == 'POST':
-        form = TableBookingForm(data=request.POST)
+    if not request.user.is_authenticated:
+        return redirect(reverse('login'))
 
+    if request.method == 'POST':
+        form = TableBookingForm(request.POST)
         if form.is_valid():
             new_booking = form.save(commit=False)
             new_booking.user = request.user
-            new_booking.save()
-            messages.success(
-                request, 'Your table in Yummy Restaurant is booked.')
+            if Booking.objects.filter(
+                    user=request.user, date=new_booking.date, time=new_booking.time).exists():
+                messages.error(
+                    request, 'You have already booked a table for this date and time.'
+                )
+                return redirect('booking_page')  # Redirect to the booking page
+
+            else:
+                new_booking.save()
+                messages.success(
+                    request, 'Your table is booked successfully.'
+                )
             return redirect('managebooking')
-        else:
-            messages.error(
-                request, 'You have already booked a table or entered invalid data'
-            )
+    else:
+        # If the form is not valid, display an error message
+        messages.error(request, 'Please correct the error below.')
+    form = TableBookingForm()
     context = {
         'form': form
     }
     return render(request, 'booking.html', context)
-    
 
 
 def managebooking(request):
@@ -57,7 +66,8 @@ def managebooking(request):
         }
         return render(request, 'managebooking.html', context)
     else:
-        redirect('../account/signup')
+        # return redirect('../account/signup')
+        return redirect(reverse('signup'))
 
 
 def changebooking(request, booking_id):
