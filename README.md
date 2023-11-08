@@ -102,10 +102,43 @@ The user stories are added to project as [issues in the Github](https://github.c
 |The Success and error messages were not displaying | I had forgotten to add an html template for displaing the message. The issue were solved by adding the HTML template for messages. | Fixed |
 |There was not any success or error message after booking a table | I removed the message HTML template from booking page and added to manage bookings page because the user was redirected to managebooking after reservation. | Fixed |
 | When the user filled in the booking form and clicked submit button nothing was happening due to an error. | I removed the validate.js that was comming from bootrstrap template that I used and the issue were solved. | Fixed |
+| I was not able to log in to the admin panel using my superuser data. | I created a new superuser  after migrating to the Elephant SQL Database. | Fixed |
+| The navbar links were not working. | I changed the href and added the url to open the link. | Fixed |
+| The images were not showing when openening the project on a browser. | Edited the image sources to display in the djano project. | Fixed |
+| User can book a table with out login or signup. | Added the djanog authentication to authenticate user and allow the user to book a table only if the user is logged in. | Fixed |
+| The user was not able to view the previous bookings and edit or delete the bookings. | Added the managebooking, changebooking and deletebooking to enable user to edit the bookings.| Fixed |
 
-    
 - #### Remaining Bugs
+  There is not any known bugs in my project.
 
+  - ### Testing User Stories
+    -  ### First Time User
+       -  As a first time user I want to view the Yummy Restaurant webpage and see information about resturant.
+          -  When the user opens the Yummy Restaurant webpage the user can find relevant information about the restaurant and see the images.
+       -  As a first time user I can see the menu items to know which kinds of foods I can eat at this restaurant.
+          -  The menu is added to the website the user can view the menu and see what kind of foods are served in this restaurant.
+       -  As a first time user, I want to see some photos of restaurant.
+          -  Some photos of the restaurant is added to the bottom of the site above nav links
+       -  As a first time user I want to be able to book a table online bcause I want to be sure that there is an empty table for me.
+          -  The user can find the link to the booking page and reserve a table online.
+    
+- ### Frequent User
+
+    - As a returning user I can create and log in it to see my bookings.
+      - The user can login and view the bookings and edit or delete the bookings.
+    - As a returning user I can see my bookings.
+      - The user can see the bookings on managebooking.
+    - As a reaturning user I can edit or delete bookings that I have made previously.
+      - The user can edit or delete booking.
+
+- ### Returning User
+
+  - As a returning user I want to be able to sign in and manage my bookings.
+    - The user can sign in and mangae all the bookings that he/she has made.
+  - As a returning user I want to be able to make changes to my current booking or cancel it.
+    - The user can change the bookings.
+  - As a returning user I want to edit or delete my bookings.
+    - The user can delete the bookings easily.
 
 ## Deployment
 
@@ -128,13 +161,15 @@ This project is deployed using [Heroku](https://id.heroku.com/) and following th
 
     1. Open Heroku and click on "Create New App".
     2. Write your app name and select region. You should give your app a unique name.
-    3. On the new page click on "settings" and select Config Var, type PORT in key with a value of 8000.
+    3. On the new page click on "settings" and select Config Var and add the below keys:
+        -  key: PORT & value 8000
+        -  Add key: DATABASE_URL, this should have been created automatically by Heroku.
+        -  Add key: CLOUDINARY_URL and the value as your cloudinary API Environment variable e.g.
+        -  Add key: SECRET_KEY and the value as a complex string which will be used to provide    cryptographic signing.
 
-    4. Click "Add buildpack", select Python and click "Save Changes".
-    5. Select NodeJS and click save again. The order is important the Python should be on the top of NodeJS.
-    6. Click on "Deploy" tab.
-    7. Select "Github" as deployment method.
-    8. Search for your repository name and click connect.
-    9. Make sure that "main" branch is selected and click on "Enable Automatic Deploys" then, click on "Deploy Branch".
-    10. When your project is deployed you can open it simply by clicking "View".
+    4. Click on "Deploy" tab.
+    5. Select "Github" as deployment method.
+    6. Search for your repository name and click connect.
+    7. Make sure that "main" branch is selected and click on "Enable Automatic Deploys" then, click on "Deploy Branch".
+    8.  When your project is deployed you can open it simply by clicking "View".
 
