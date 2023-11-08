@@ -13,30 +13,16 @@ This is my fourth project in [Code Institute](https://codeinstitute.net/de/) tha
 
 # **Table of Contents**
 
-- [User Experience (UX)](#user-experience-ux)
-  - [Project goals](#project-goals)
+- [**Yummy Restaurant**](#yummy-restaurant)
+- [**Table of Contents**](#table-of-contents)
+  - [Project Goals](#project-goals)
   - [User Stories](#user-stories)
-  - [Agile Methodology](#agile-methodology)
-  - [Design](#design)
-    - [Wireframes](#wireframes)
-    - [Database Schema](#database-schema)
-- [Features](#features)
-  - [Future Features](#future-features)
-- [Technologies Used](#technologies-used)
-  - [Languages](#languages)
-  - [Frameworks Libraries Programs](#frameworks-libraries-programs)
-- [Testing](#testing)
-  - [Bugs](#bugs)
-    - [Fixed Bugs](#fixed-bugs)
-    - [Remaining Bugs](#remaining-bugs)
-- [Deployment](#deployment)
-  - [Forking the GitHub Repository](#forking-the-github-repository)
-  - [Running the project locally](#running-the-project-locally)
-  - [Deploying with Heroku](#deploying-with-heroku)
-- [Credits](#credits)
-  - [Code](#code)
-  - [Media](#media)
-  - [Acknowledgements](#acknowledgements)
+  - [Features](#features)
+  - [Frameworks, Libraries \& Tools](#frameworks-libraries--tools)
+  - [Testing](#testing)
+  - [Deployment](#deployment)
+    - [Github Deployment](#github-deployment)
+    - [Deploying with heroku](#deploying-with-heroku)
 
 
 ## Project Goals
@@ -100,4 +86,33 @@ The user stories are added to project as [issues in the Github](https://github.c
 
 
 ## Deployment
+
+### Github Deployment
+
+    -  Login to your github account and navigate to your repositories and click on New.
+    -  Select a template(the Code Institute full template is used for this project).[Code-Institute-Org/python-essentials-template](https://github.com/Code-Institute-Org/p3-template)
+    -  Write a name for your repository
+    -  Select public
+    -  Click on create to create your repository.
+    -  Copy the link of your repository
+    -  log in to your cloudinary using github
+    -  click on crete new workspace and paste the github url.
+    -  Run the commands first "git add .", then "git commit -m "commit message" and finally "git push" to push the files to github.
+
+
+### Deploying with heroku
+
+This project is deployed using [Heroku](https://id.heroku.com/) and following the instruction of deployment video of Course Institue. These are the deployment steps:
+
+    1. Open Heroku and click on "Create New App".
+    2. Write your app name and select region. You should give your app a unique name.
+    3. On the new page click on "settings" and select Config Var, type PORT in key with a value of 8000.
+
+    4. Click "Add buildpack", select Python and click "Save Changes".
+    5. Select NodeJS and click save again. The order is important the Python should be on the top of NodeJS.
+    6. Click on "Deploy" tab.
+    7. Select "Github" as deployment method.
+    8. Search for your repository name and click connect.
+    9. Make sure that "main" branch is selected and click on "Enable Automatic Deploys" then, click on "Deploy Branch".
+    10. When your project is deployed you can open it simply by clicking "View".
 
