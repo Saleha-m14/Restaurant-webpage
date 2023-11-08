@@ -22,8 +22,8 @@ def booking_page(request):
     If user is loged in it renders booking.html and if not
     the user should login or signup.
     """
-    if not request.user.is_authenticated:
-        return ('../account/login')
+    # if not request.user.is_authenticated:
+    # return ('../account/login')
 
     if request.method == 'POST':
         form = TableBookingForm(request.POST)
@@ -43,9 +43,9 @@ def booking_page(request):
                     request, 'Your table is booked successfully.'
                 )
             return redirect('managebooking')
-    else:
-        # If the form is not valid, display an error message
-        messages.error(request, 'Please correct the error below.')
+        else:
+            # If the form is not valid, display an error message
+            messages.error(request, 'Please correct the error below.')
     form = TableBookingForm()
     context = {
         'form': form
