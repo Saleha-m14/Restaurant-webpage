@@ -23,7 +23,7 @@ def booking_page(request):
     the user should login or signup.
     """
     if not request.user.is_authenticated:
-        return redirect(reverse('login'))
+        return ('../account/login')
 
     if request.method == 'POST':
         form = TableBookingForm(request.POST)
@@ -66,8 +66,8 @@ def managebooking(request):
         }
         return render(request, 'managebooking.html', context)
     else:
-        # return redirect('../account/signup')
-        return redirect(reverse('signup'))
+        return ('../account/signup')
+        # return redirect(reverse('signup'))
 
 
 def changebooking(request, booking_id):
