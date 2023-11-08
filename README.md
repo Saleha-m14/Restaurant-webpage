@@ -18,11 +18,25 @@ This is my fourth project in [Code Institute](https://codeinstitute.net/de/) tha
   - [Project Goals](#project-goals)
   - [User Stories](#user-stories)
   - [Features](#features)
+    - [Navbar](#navbar)
+    - [Home](#home)
+    - [Menu](#menu)
+    - [Gallery](#gallery)
+    - [Footer](#footer)
+    - [Account Signup and login](#account-signup-and-login)
+    - [Booking](#booking)
+    - [Managebooking](#managebooking)
+    - [Messages](#messages)
   - [Frameworks, Libraries \& Tools](#frameworks-libraries--tools)
   - [Testing](#testing)
   - [Deployment](#deployment)
     - [Github Deployment](#github-deployment)
     - [Deploying with heroku](#deploying-with-heroku)
+  - [Languages](#languages)
+  - [Code](#code)
+  - [Text](#text)
+  - [Media](#media)
+  - [Acknowledgements](#acknowledgements)
 
 
 ## Project Goals
@@ -71,6 +85,44 @@ The user stories are added to project as [issues in the Github](https://github.c
  [Bootstrap restaurant template](https://bootstrapmade.com/demo/Restaurantly/)
 
 ## Features
+
+### Navbar
+On the top of the page I have added a navbar menu with links that user can easily navigate to different pages
+![navbar](images/readmeimg/navbar.png)
+
+### Home
+In the home page a short introductry test about Yummy Restaurant is written for the customers and the link to table booking page and menu items are added.
+![home](images/readmeimg/home.png)
+
+### Menu
+In the menu section the list of the foods are added that the user can see what kinds of foods ares served in Yummy Restaurant.
+![Menu](images/readmeimg/menu.png)
+
+### Gallery
+Some photos of the restaurant differnt sections are added in the gallery section.
+![gallery](images/readmeimg/gallery.png)
+
+### Footer
+The footer is in the bottom of the page with the link to social accounts.
+![footer](images/readmeimg/footer.png)
+
+### Account Signup and login
+The user can go to signup and login pages to signup or login.
+![signup]()
+![login]()
+
+### Booking
+The user can click on book a table button to go to the booking page and fill the form to reserve a table in Yummy Restaurant.
+![booking](images/readmeimg/book%20a%20table%20form.png)
+
+### Managebooking
+When the user fills the booking form after submission the user is redirected to managebooking page to see the bookings to edit or delete.
+![managebooking](images/readmeimg/managebooking.png)
+
+### Messages
+When the user login/logout/signup or submit or delete a form the messages are displaying to aware the user.
+![message](images/readmeimg/message.png)
+
 
   - ### Future Features
     - As a future feature the user will be able to order food  from the menu items.
@@ -173,3 +225,27 @@ This project is deployed using [Heroku](https://id.heroku.com/) and following th
     7. Make sure that "main" branch is selected and click on "Enable Automatic Deploys" then, click on "Deploy Branch".
     8.  When your project is deployed you can open it simply by clicking "View".
 
+## Languages
+
+    -  Python
+    -  JavaScript
+    -  HTML5
+    -  CSS3
+
+## Code
+
+    - [Deliscious](https://bootstrapmade.com/restaurantly-restaurant-template/) theme was the Boostrap theme used in the project.
+    - [Django Documenation](https://docs.djangoproject.com/en/4.2/) was used to provide examples of code solutions and Django functionality.
+    - [Bootstrap Documenation](https://getbootstrap.com/docs/4.1/getting-started/introduction/) was used to provide examples of Bootstrap functionality and building blocks.
+    - Code Institute walkthrough as inspiration and code examples, the code institute walkthroughs "Hello Django" and "I Think Therefore I Blog" was used.
+
+## Text
+   The texts are written by author.
+
+## Media 
+    The images comes from [bootstrp deliscious theme.](https://bootstrapmade.com/restaurantly-restaurant-template/)
+
+## Acknowledgements
+
+    The tutor support team at Code Institute for their support.
+    My Code Institute Mentor for feedback and suggestions.
