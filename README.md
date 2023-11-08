@@ -23,7 +23,6 @@ This is my fourth project in [Code Institute](https://codeinstitute.net/de/) tha
     - [Menu](#menu)
     - [Gallery](#gallery)
     - [Footer](#footer)
-    - [Account Signup and login](#account-signup-and-login)
     - [Booking](#booking)
     - [Managebooking](#managebooking)
     - [Messages](#messages)
@@ -105,11 +104,6 @@ Some photos of the restaurant differnt sections are added in the gallery section
 ### Footer
 The footer is in the bottom of the page with the link to social accounts.
 ![footer](images/readmeimg/footer.png)
-
-### Account Signup and login
-The user can go to signup and login pages to signup or login.
-![signup]()
-![login]()
 
 ### Booking
 The user can click on book a table button to go to the booking page and fill the form to reserve a table in Yummy Restaurant.
